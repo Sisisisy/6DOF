@@ -6,7 +6,6 @@
 <title>Sponsors | 6-DOF Drone Team</title>
 <link rel="icon" type="image/png" href="logo.png">
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=Syne:wght@700;800&display=swap" rel="stylesheet">
-
 <style>
   *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -645,6 +644,33 @@
   /* sun/moon icons inside toggle label */
   .toggle-icon { font-size: 13px; line-height: 1; }
 
+
+  .email-link-plain, .contact-email-plain {
+    color: #d080dc;
+    font-weight: 500;
+    font-size: 13.5px;
+    cursor: default;
+  }
+  body.day .email-link-plain, body.day .contact-email-plain { color: var(--purple); }
+  .email-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--purple2);
+    color: white;
+    font-size: 13.5px;
+    font-weight: 500;
+    padding: 12px 22px;
+    border-radius: 9px;
+    align-self: flex-start;
+    border: none;
+    cursor: pointer;
+    transition: background 0.18s, transform 0.18s;
+    font-family: inherit;
+  }
+  .email-btn:hover { background: var(--purple); transform: translateY(-2px); }
+  .email-btn svg { width: 15px; height: 15px; stroke: white; fill: none; stroke-width: 2; }
+
 </style>
 </head>
 <body>
@@ -688,28 +714,14 @@
       <p>Organizations and individuals supporting the 6-DOF Drone Team for SUAS 2026.</p>
     </div>
 
-    <!-- EMPTY STATE — remove this block and add .sponsor-logo-grid cards when you have sponsors -->
     <div class="sponsors-empty">
       <div class="sponsors-empty-icon">
         <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
       </div>
       <h3>No sponsors yet — be the first.</h3>
       <p>We're looking for organizations and individuals who want to support student engineering and autonomous systems development.</p>
-      <a href="/cdn-cgi/l/email-protection#b2c6d7d3df84d6ddd4f2ddc7c6deddddd99cd1dddf">Reach out at <span class="__cf_email__" data-cfemail="7a0e1f1b174c1e151c3a150f0e1615151154191517">[email&#160;protected]</span> →</a>
+      <span class="email-link-plain">Reach out at team6dof&#64;outlook&#46;com &#8594;</span>
     </div>
-
-    <!--
-      WHEN YOU HAVE SPONSORS — replace the empty block above with:
-
-      <div class="sponsor-logo-grid">
-        <div class="sponsor-logo-card">
-          <img src="sponsor1-logo.png" alt="Sponsor Name">
-        </div>
-        <div class="sponsor-logo-card">
-          <img src="sponsor2-logo.png" alt="Sponsor Name">
-        </div>
-      </div>
-    -->
   </div>
 
   <div class="section-divider"></div>
@@ -724,19 +736,19 @@
         <div class="contact-detail-icon">
           <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
         </div>
-        <a href="/cdn-cgi/l/email-protection#a1d5c4c0cc97c5cec7e1ced4d5cdcececa8fc2cecc"><span class="__cf_email__" data-cfemail="433726222e75272c25032c36372f2c2c286d202c2e">[email&#160;protected]</span></a>
+        <span class="contact-email-plain">team6dof&#64;outlook&#46;com</span>
       </div>
     </div>
 
     <div class="email-card">
       <div class="email-card-label">Contact us directly</div>
-      <div class="email-display"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="e89c8d8985de8c878ea8879d9c84878783c68b8785">[email&#160;protected]</a></div>
+      <div class="email-display">team6dof&#64;outlook&#46;com</div>
       <div class="email-divider"></div>
       <p class="email-note">Send us a message with your name, organization, and any questions about supporting the team. We respond within 48 hours.</p>
-      <a href="/cdn-cgi/l/email-protection#afdbcacec299cbc0c9efc0dadbc3c0c0c481ccc0c2" class="email-btn">
+      <button class="email-btn" onclick="window.location='mai'+'lto:team6dof@outlook.com'">
         <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
         Send an Email
-      </a>
+      </button>
     </div>
   </div>
 
@@ -769,10 +781,52 @@
       <a href="docs.html">Documentation</a>
     </div>
   </div>
-
   <div class="footer-bottom">
     <div class="footer-bottom-logo">
       <img src="logo.png" alt="6-DOF Drone">
       6-DOF Drone Team
     </div>
-    <span class="footer-copy">© 2026 6-DOF Drone 
+    <span class="footer-copy">&copy; 2026 6-DOF Drone Team &mdash; KFUPM &middot; SUAS Competition</span>
+  </div>
+</footer>
+
+<script>
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
+    });
+  }, { threshold: 0.1 });
+  reveals.forEach(el => observer.observe(el));
+</script>
+<script>
+  (function() {
+    var saved = localStorage.getItem('6dof-theme');
+    if (saved === 'day') applyDay();
+    function applyDay() {
+      document.body.classList.add('day');
+      var t = document.getElementById('toggle-track');
+      var i = document.getElementById('theme-icon');
+      var l = document.getElementById('theme-label');
+      if (t) t.classList.add('on');
+      if (i) i.textContent = '☀️';
+      if (l) l.textContent = 'Night';
+    }
+  })();
+  function toggleTheme() {
+    var isDay = document.body.classList.toggle('day');
+    var t = document.getElementById('toggle-track');
+    var i = document.getElementById('theme-icon');
+    var l = document.getElementById('theme-label');
+    if (isDay) {
+      t.classList.add('on'); i.textContent = '☀️'; l.textContent = 'Night';
+      localStorage.setItem('6dof-theme', 'day');
+    } else {
+      t.classList.remove('on'); i.textContent = '🌙'; l.textContent = 'Day';
+      localStorage.setItem('6dof-theme', 'dark');
+    }
+  }
+</script>
+
+</body>
+</html>
